@@ -77,7 +77,7 @@ function App() {
 
   // 3. Efecto para cargar la LISTA de pisos (solo una vez al inicio)
   useEffect(() => {
-    fetch(`${API_URL}/api/locales`)
+    fetch(`${API_URL}/api/floors`)
       .then(res => res.json())
       .then(data => {
         setFloors(data);
