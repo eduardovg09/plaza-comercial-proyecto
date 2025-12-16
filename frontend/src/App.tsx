@@ -4,6 +4,7 @@ import AdminPanel from './AdminPanel'; // Importamos el panel
 import 'leaflet/dist/leaflet.css';
 import Login from './Login';
 import ImageGallery from './ImageGallery';
+import { API_URL } from './config';
 
 // Coordenadas de Ecatepec
 const CENTER_COORDS: [number, number] = [19.5732, -99.0214];
@@ -76,7 +77,7 @@ function App() {
 
   // 3. Efecto para cargar la LISTA de pisos (solo una vez al inicio)
   useEffect(() => {
-    fetch('https://thankful-grass-080cbca1e.3.azurestaticapps.net/api/floors')
+    fetch(`${API_URL}/api/locales`)
       .then(res => res.json())
       .then(data => {
         setFloors(data);
@@ -89,7 +90,7 @@ function App() {
   useEffect(() => {
     setGeoJsonData(null);
     // Usamos la variable de estado selectedFloorId en la URL
-    fetch(`https://thankful-grass-080cbca1e.3.azurestaticapps.net/api/floors/${selectedFloorId}/geojson`)
+    fetch(`${API_URL}/api/floors/${selectedFloorId}/geojson`)
       .then(response => response.json())
       .then(data => {
         setGeoJsonData(data);
@@ -109,7 +110,7 @@ function App() {
     if (!localSeleccionado) return;
 
     try {
-      const response = await fetch('https://thankful-grass-080cbca1e.3.azurestaticapps.net/api/requests', {
+      const response = await fetch(`${API_URL}/api/requests`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

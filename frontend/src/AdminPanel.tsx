@@ -11,13 +11,14 @@ import {
     RadialLinearScale
 } from 'chart.js';
 import { Doughnut, Bar, PolarArea } from 'react-chartjs-2';
+import { API_URL } from './config';
 
 // Registramos todos los componentes de Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend, Title, CategoryScale, LinearScale, BarElement, RadialLinearScale);
 
 // --- TIPOS DE DATOS ---
 
-// Interfaz para respuestas de KPIs
+// Interfaces para respuestas de KPIs
 interface KpiStatus { Status: string; Total: number; }
 interface KpiRequest { Status: string; Total: number; }
 interface KpiFloor { FloorName: string; Total: number; }
@@ -90,9 +91,7 @@ function AdminPanel() {
     );
 }
 
-// --- VISTA 1: DASHBOARD (KPIs) ---
-// --- VISTA DASHBOARD CON FILTROS ---
-// --- VISTA DASHBOARD CON FILTROS Y HISTORIAL ---
+// --- VISTA 1: DASHBOARD (KPIs + Filtros + Historial) ---
 function DashboardView() {
     // Estados para KPIs Gráficos
     const [kpiStatus, setKpiStatus] = useState<KpiStatus[]>([]);
@@ -100,7 +99,7 @@ function DashboardView() {
     const [kpiFloors, setKpiFloors] = useState<KpiFloor[]>([]);
     const [kpiGiros, setKpiGiros] = useState<KpiGiro[]>([]);
 
-    // NUEVO ESTADO: Historial Reciente
+    // Estado: Historial Reciente
     const [recentHistory, setRecentHistory] = useState<any[]>([]);
 
     // Estados Filtros
@@ -116,18 +115,18 @@ function DashboardView() {
         const qs = params.toString();
 
         // Cargar Gráficas
-        fetch(`http://localhost:3000/api/admin/kpi/status?${qs}`).then(r => r.json()).then(setKpiStatus);
-        fetch(`http://localhost:3000/api/admin/kpi/requests-status?${qs}`).then(r => r.json()).then(setKpiRequests);
-        fetch(`http://localhost:3000/api/admin/kpi/requests-floor?${qs}`).then(r => r.json()).then(setKpiFloors);
-        fetch(`http://localhost:3000/api/admin/kpi/requests-giro?${qs}`).then(r => r.json()).then(setKpiGiros);
+        fetch(`${API_URL}/api/admin/kpi/status?${qs}`).then(r => r.json()).then(setKpiStatus).catch(console.error);
+        fetch(`${API_URL}/api/admin/kpi/requests-status?${qs}`).then(r => r.json()).then(setKpiRequests).catch(console.error);
+        fetch(`${API_URL}/api/admin/kpi/requests-floor?${qs}`).then(r => r.json()).then(setKpiFloors).catch(console.error);
+        fetch(`${API_URL}/api/admin/kpi/requests-giro?${qs}`).then(r => r.json()).then(setKpiGiros).catch(console.error);
 
-        // Cargar Historial (Este siempre muestra lo último, independientemente de los filtros, o puedes filtrarlo también si prefieres)
-        fetch(`http://localhost:3000/api/admin/kpi/recent-history`).then(r => r.json()).then(setRecentHistory);
+        // Cargar Historial (Siempre muestra lo último)
+        fetch(`${API_URL}/api/admin/kpi/recent-history`).then(r => r.json()).then(setRecentHistory).catch(console.error);
     };
 
     useEffect(() => { cargarDatos(); }, []);
 
-    // Configuración de Gráficas (Mismo código de antes...)
+    // Configuración de Gráficas
     const dataLocales = {
         labels: ['Disponible', 'Negociación', 'Ocupado'],
         datasets: [{
@@ -203,7 +202,7 @@ function DashboardView() {
                 <div className="flex gap-2">
                     {/* Reporte General (Solicitudes) */}
                     <a
-                        href="http://localhost:3000/api/report/locals"
+                        href={`${API_URL}/api/report/locals`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-bold shadow transition-colors flex items-center gap-2 h-10"
@@ -215,9 +214,9 @@ function DashboardView() {
                         Solicitudes
                     </a>
 
-                    {/* NUEVO: Reporte Operativo (ETL) */}
+                    {/* Reporte Operativo (ETL) */}
                     <a
-                        href="http://localhost:3000/api/report/operational"
+                        href={`${API_URL}/api/report/operational`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded text-sm font-bold shadow transition-colors flex items-center gap-2 h-10"
@@ -251,7 +250,7 @@ function DashboardView() {
                 </div>
             </div>
 
-            {/* --- NUEVA SECCIÓN: HISTORIAL RECIENTE --- */}
+            {/* SECCIÓN: HISTORIAL RECIENTE */}
             <div className="bg-white rounded-lg shadow border border-gray-100 overflow-hidden mb-10">
                 <div className="p-4 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
                     <h3 className="text-lg font-bold text-gray-700">🕒 Historial Reciente (Últimas 20)</h3>
@@ -298,7 +297,7 @@ function RequestsView() {
     const [requests, setRequests] = useState<Request[]>([]);
 
     const cargar = () => {
-        fetch('http://localhost:3000/api/admin/requests')
+        fetch(`${API_URL}/api/admin/requests`)
             .then(res => res.json()).then(setRequests)
             .catch(console.error);
     };
@@ -309,14 +308,14 @@ function RequestsView() {
         if (!confirm(`¿Estás seguro de que deseas ${action === 'approve' ? 'APROBAR' : 'RECHAZAR'} esta solicitud?`)) return;
 
         try {
-            const res = await fetch(`http://localhost:3000/api/admin/requests/${id}`, {
+            const res = await fetch(`${API_URL}/api/admin/requests/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ action })
             });
             const data = await res.json();
             if (data.success) {
-                alert(data.message); // Muestra mensaje de éxito (y correo enviado)
+                alert(data.message);
                 cargar();
             }
         } catch (error) {
@@ -388,7 +387,7 @@ function LocalsView() {
     const [editForm, setEditForm] = useState({ price: 0, status: '' });
 
     const cargar = () => {
-        fetch('http://localhost:3000/api/admin/locals')
+        fetch(`${API_URL}/api/admin/locals`)
             .then(res => res.json()).then(setLocals)
             .catch(console.error);
     };
@@ -403,7 +402,7 @@ function LocalsView() {
     const saveEdit = async () => {
         if (!editingId) return;
         try {
-            await fetch(`http://localhost:3000/api/admin/locals/${editingId}`, {
+            await fetch(`${API_URL}/api/admin/locals/${editingId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(editForm)
@@ -483,7 +482,7 @@ function UsersView() {
     const [editForm, setEditForm] = useState({ fullName: '', email: '', role: '' });
 
     const cargar = () => {
-        fetch('http://localhost:3000/api/admin/users')
+        fetch(`${API_URL}/api/admin/users`)
             .then(res => res.json()).then(setUsers)
             .catch(console.error);
     };
@@ -498,7 +497,7 @@ function UsersView() {
     const saveEdit = async () => {
         if (!editingId) return;
         try {
-            const res = await fetch(`http://localhost:3000/api/admin/users/${editingId}`, {
+            const res = await fetch(`${API_URL}/api/admin/users/${editingId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(editForm)
@@ -514,7 +513,7 @@ function UsersView() {
     const deleteUser = async (id: number) => {
         if (!confirm("⚠️ ¿ESTÁS SEGURO?\nSe borrarán todas sus solicitudes e historial.")) return;
         try {
-            const res = await fetch(`http://localhost:3000/api/admin/users/${id}`, { method: 'DELETE' });
+            const res = await fetch(`${API_URL}/api/admin/users/${id}`, { method: 'DELETE' });
             const data = await res.json();
             if (data.success) { alert("Usuario eliminado."); cargar(); }
         } catch (e) { alert("Error al eliminar"); }

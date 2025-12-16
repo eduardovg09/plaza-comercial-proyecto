@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { API_URL } from './config';
 
 interface LoginProps {
     onLogin: (userData: any) => void;
@@ -14,7 +15,8 @@ export default function Login({ onLogin }: LoginProps) {
         setError('');
 
         try {
-            const res = await fetch('http://localhost:3000/api/auth/login', {
+            // CORRECCIÓN AQUÍ: El paréntesis de cierre va AL FINAL, no después de la URL
+            const res = await fetch(`${API_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
@@ -23,7 +25,7 @@ export default function Login({ onLogin }: LoginProps) {
             const data = await res.json();
 
             if (data.success) {
-                // Guardamos el token por si lo necesitas luego (opcional)
+                // Guardamos el token
                 localStorage.setItem('token', data.token);
                 // Avisamos a App que ya entramos
                 onLogin(data.user);
@@ -31,7 +33,7 @@ export default function Login({ onLogin }: LoginProps) {
                 setError(data.message);
             }
         } catch (err) {
-            setError('Error de conexión');
+            setError('Error de conexión con el servidor');
         }
     };
 
