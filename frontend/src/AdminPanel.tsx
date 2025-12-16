@@ -172,7 +172,7 @@ function DashboardView() {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-6">Tablero de Inteligencia</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">Monitoreo Operativo (KPI's)</h1>
 
             {/* BARRA DE FILTROS Y EXPORTACIÓN */}
             <div className="bg-white p-4 rounded-lg shadow mb-8 flex flex-wrap gap-4 items-end border border-gray-200 justify-between">
@@ -237,11 +237,11 @@ function DashboardView() {
                     <div className="h-64 flex justify-center"><Doughnut data={dataLocales} options={{ maintainAspectRatio: false }} /></div>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow border border-gray-100">
-                    <h3 className="text-lg font-bold text-gray-700 mb-4">2. Funnel de Solicitudes</h3>
+                    <h3 className="text-lg font-bold text-gray-700 mb-4">2. Solicitudes de Renta</h3>
                     <div className="h-64"><Bar data={dataRequests} options={{ maintainAspectRatio: false, plugins: { legend: { display: false } } }} /></div>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow border border-gray-100">
-                    <h3 className="text-lg font-bold text-gray-700 mb-4">3. Demanda por Nivel</h3>
+                    <h3 className="text-lg font-bold text-gray-700 mb-4">3. Demanda por Piso</h3>
                     <div className="h-64 flex justify-center"><PolarArea data={dataFloors} options={{ maintainAspectRatio: false }} /></div>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow border border-gray-100">
