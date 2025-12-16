@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import AdminPanel from './AdminPanel'; // Importamos el panel
 import 'leaflet/dist/leaflet.css';
+import LandingPage from './LandingPage';
 import Login from './Login';
 import ImageGallery from './ImageGallery';
 import { API_URL } from './config';
@@ -33,7 +34,7 @@ function App() {
   // Leemos si el usuario quiere entrar al admin
   const isAdminMode = window.location.search === '?admin';
   const [user, setUser] = useState<any>(null); // Guardará los datos del usuario logueado
-  
+  const [mostrarMapa, setMostrarMapa] = useState(false);
 
   // 2. LÓGICA DE RUTEO SIMPLE
   if (isAdminMode) {
@@ -58,6 +59,10 @@ function App() {
   //if (window.location.search === '?admin') {
   //  return <AdminPanel />;
   //}
+
+  if (!mostrarMapa) {
+    return <LandingPage onEnter={() => setMostrarMapa(true)} />;
+  }
 
   const [geoJsonData, setGeoJsonData] = useState<GeoJSON.FeatureCollection | null>(null);
   const [localSeleccionado, setLocalSeleccionado] = useState<LocalProperties | null>(null);
@@ -215,7 +220,7 @@ function App() {
         {/* PANEL LATERAL */}
         <aside className="w-1/3 min-w-[350px] bg-white p-6 shadow-xl z-20 overflow-y-auto border-r border-gray-200">
 
-          
+
 
           {localSeleccionado ? (
             <div className="animate-fade-in space-y-4"> {/* Agregamos un contenedor con espaciado */}
