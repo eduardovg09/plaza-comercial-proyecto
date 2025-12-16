@@ -76,7 +76,7 @@ function App() {
 
   // 3. Efecto para cargar la LISTA de pisos (solo una vez al inicio)
   useEffect(() => {
-    fetch('http://localhost:3000/api/floors')
+    fetch('https://thankful-grass-080cbca1e.3.azurestaticapps.net/api/floors')
       .then(res => res.json())
       .then(data => {
         setFloors(data);
@@ -89,7 +89,7 @@ function App() {
   useEffect(() => {
     setGeoJsonData(null);
     // Usamos la variable de estado selectedFloorId en la URL
-    fetch(`http://localhost:3000/api/floors/${selectedFloorId}/geojson`)
+    fetch(`https://thankful-grass-080cbca1e.3.azurestaticapps.net/api/floors/${selectedFloorId}/geojson`)
       .then(response => response.json())
       .then(data => {
         setGeoJsonData(data);
@@ -109,7 +109,7 @@ function App() {
     if (!localSeleccionado) return;
 
     try {
-      const response = await fetch('http://localhost:3000/api/requests', {
+      const response = await fetch('https://thankful-grass-080cbca1e.3.azurestaticapps.net/api/requests', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
