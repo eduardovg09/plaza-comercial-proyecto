@@ -15,5 +15,5 @@ Proyecto final para la materia [Nombre]. Sistema fullstack para la renta y admin
 4. Configurar `.env` con credenciales de BD.
 
 ## 🔗 Despliegue
-- Frontend: https://thankful-grass-080cbca1e.3.azurestaticapps.net
+- Frontend: https://thankful-bush-0a7e8891e.3.azurestaticapps.net/
 - Backend: api-plaza-proyecto-bxdkh2caf0e8bjhr.canadacentral-01.azurewebsites.net

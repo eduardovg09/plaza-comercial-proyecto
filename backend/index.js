@@ -29,23 +29,34 @@ const transporter = nodemailer.createTransport({
 // 1. RUTA DE AYUDA: Crear o Actualizar Admin con Hash Real
 // (Úsala una vez para arreglar la contraseña de tu admin actual)
 app.post('/api/auth/setup-admin', async (req, res) => {
-    try {
-        const pool = await getConnection();
-        const { email, password } = req.body;
+    console.log("👉 1. Petición recibida en setup-admin"); // Log 1
 
-        // ENCRIPTAMOS LA CONTRASEÑA 🔐
+    try {
+        const { email, password } = req.body;
+        console.log("👉 2. Datos recibidos:", email); // Log 2
+
+        const pool = await getConnection();
+        console.log("👉 3. Conexión a BD obtenida"); // Log 3
+
+        // ENCRIPTAMOS
+        console.log("👉 4. Iniciando encriptación...");
         const salt = await bcrypt.genSalt(10);
         const passwordHash = await bcrypt.hash(password, salt);
+        console.log("👉 5. Contraseña encriptada exitosamente"); // Log 4
 
-        // Actualizamos el usuario existente con el nuevo Hash
+        // ACTUALIZAMOS
+        console.log("👉 6. Ejecutando Update en SQL...");
         await pool.request()
             .input('email', email)
             .input('pass', passwordHash)
             .query("UPDATE Users SET PasswordHash = @pass, Role = 'admin' WHERE Email = @email");
 
-        res.json({ success: true, message: 'Admin configurado con contraseña encriptada.' });
+        console.log("👉 7. Update terminado, enviando respuesta"); // Log 5
+        res.json({ success: true, message: 'Admin configurado.' });
+
     } catch (error) {
-        res.status(500).json({ error: 'Error en setup' });
+        console.error("❌ ERROR EN SETUP:", error); // Log de Error
+        res.status(500).json({ error: 'Error en setup', detalles: error.message });
     }
 });
 
