@@ -21,10 +21,11 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '24.x'
+          node-version: "20.x" # Recomiendo usar 20.x (LTS actual) para mayor estabilidad
 
       - name: npm install, build, and test
         run: |
+          cd backend
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -47,7 +48,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -55,11 +56,10 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A26BF8E2D1764E54BFE1F3508569AA42 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1BEFEC8B51E04BA296B9235B309593E7 }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: "Deploy to Azure Web App"
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'api-plaza-proyecto'
-          slot-name: 'Production'
-          package: .
-          
+          app-name: "api-plaza-proyecto"
+          slot-name: "Production"
+          package: ./backend # <--- AQUÍ ESTÁ EL CAMBIO IMPORTANTE
