@@ -1,23 +1,24 @@
+require('dotenv').config(); // 1. Cargar librería para leer .env
 const sql = require('mssql');
 
 const config = {
-    user: 'progDB',      // El usuario que acabamos de crear
-    password: 'Tese01',        // La contraseña que pusimos
-    server: 'PC-LALO\\SQLEXPRESS',
-    database: 'PlazaComercialDB',
+    user: process.env.DB_USER,      // Lee del entorno
+    password: process.env.DB_PASS,  // Lee del entorno
+    server: process.env.DB_SERVER,  // Lee del entorno
+    database: process.env.DB_NAME,  // Lee del entorno
     options: {
-        encrypt: false, // Importante para local
-        trustServerCertificate: true // Aceptar certificados locales
+        encrypt: true, // OBLIGATORIO para Azure SQL
+        trustServerCertificate: true // Acepta certificados (útil para evitar errores)
     }
 };
 
 async function getConnection() {
     try {
         const pool = await sql.connect(config);
-        //console.log("✅ ¡Conexión exitosa a SQL Server (Vía TCP)!");
+        console.log("Conexión a BD exitosa");
         return pool;
     } catch (err) {
-        console.error('❌ Error conectando a SQL Server:', err);
+        console.error('Error conectando a SQL Server:', err);
         throw err;
     }
 }
