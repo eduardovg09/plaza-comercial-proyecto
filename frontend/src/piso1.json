@@ -1,0 +1,837 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L01",
+                "floorId": 1,
+                "nombre": "Local 1 - Entrada",
+                "area": 35,
+                "precio": 8500,
+                "estado": "disponible",
+                "giro": "tecnologia",
+                "imagen": "https://placehold.co/600x400/2563eb/ffffff?text=TECNOLOGIA"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02145056052245,
+                            19.57334682961711
+                        ],
+                        [
+                            -99.02146866543316,
+                            19.573327875516085
+                        ],
+                        [
+                            -99.02141200376781,
+                            19.57327812099068
+                        ],
+                        [
+                            -99.0213947370475,
+                            19.573296601244635
+                        ],
+                        [
+                            -99.02145056052245,
+                            19.57334682961711
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L02",
+                "floorId": 1,
+                "nombre": "Local 2 - Moda",
+                "area": 50,
+                "precio": 12000,
+                "estado": "disponible",
+                "giro": "ropa",
+                "imagen": "https://placehold.co/600x400/db2777/ffffff?text=MODA+Y+ROPA"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02146983890009,
+                            19.573326611908897
+                        ],
+                        [
+                            -99.02148827908668,
+                            19.573307026002468
+                        ],
+                        [
+                            -99.02143128214544,
+                            19.573256323765804
+                        ],
+                        [
+                            -99.02141334487268,
+                            19.573277015334554
+                        ],
+                        [
+                            -99.02146983890009,
+                            19.573326611908897
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L03",
+                "floorId": 1,
+                "nombre": "Local 3 - Zapatería",
+                "area": 45,
+                "precio": 11000,
+                "estado": "disponible",
+                "giro": "calzado",
+                "imagen": "https://placehold.co/600x400/d97706/ffffff?text=ZAPATERIA"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02148911600936,
+                            19.573306024779356
+                        ],
+                        [
+                            -99.02151141187201,
+                            19.57328327985232
+                        ],
+                        [
+                            -99.02145173272099,
+                            19.573232577608167
+                        ],
+                        [
+                            -99.021432454344,
+                            19.573255638443968
+                        ],
+                        [
+                            -99.02148911600936,
+                            19.573306024779356
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L04",
+                "floorId": 1,
+                "nombre": "Local 4 - Accesorios",
+                "area": 28,
+                "precio": 7500,
+                "estado": "ocupado",
+                "giro": "regalos",
+                "imagen": "https://placehold.co/600x400/9333ea/ffffff?text=REGALOS"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02150987804264,
+                            19.573279391100442
+                        ],
+                        [
+                            -99.02153414512608,
+                            19.573254832630383
+                        ],
+                        [
+                            -99.02147662315117,
+                            19.573208256211956
+                        ],
+                        [
+                            -99.02145505241064,
+                            19.573204868836243
+                        ],
+                        [
+                            -99.02145213137268,
+                            19.573230909289904
+                        ],
+                        [
+                            -99.02150987804264,
+                            19.573279391100442
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L05",
+                "floorId": 1,
+                "nombre": "Local 5 - Ancla",
+                "area": 120,
+                "precio": 25000,
+                "estado": "disponible",
+                "giro": "banco",
+                "imagen": "https://placehold.co/600x400/1e40af/ffffff?text=SUCURSAL+BANCO"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02147594335368,
+                            19.573205057943483
+                        ],
+                        [
+                            -99.02153565138272,
+                            19.573252079342566
+                        ],
+                        [
+                            -99.02159387413782,
+                            19.573191063476415
+                        ],
+                        [
+                            -99.02154723652282,
+                            19.57311437377564
+                        ],
+                        [
+                            -99.02143346450688,
+                            19.57315103929359
+                        ],
+                        [
+                            -99.02145663478706,
+                            19.57320253893907
+                        ],
+                        [
+                            -99.02147594335368,
+                            19.573205057943483
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L06",
+                "floorId": 1,
+                "nombre": "Local 6 - Cafetería",
+                "area": 40,
+                "precio": 9500,
+                "estado": "disponible",
+                "giro": "cafeteria",
+                "imagen": "https://placehold.co/600x400/78350f/ffffff?text=CAFETERIA"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02139190725323,
+                            19.573122381405085
+                        ],
+                        [
+                            -99.02149450691057,
+                            19.573087762766207
+                        ],
+                        [
+                            -99.0214621556672,
+                            19.573037467749018
+                        ],
+                        [
+                            -99.02130987374356,
+                            19.57303376638349
+                        ],
+                        [
+                            -99.02135054387816,
+                            19.573128260041358
+                        ],
+                        [
+                            -99.02139190725323,
+                            19.573122381405085
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L07",
+                "floorId": 1,
+                "nombre": "Local 7 - Estética",
+                "area": 25,
+                "precio": 7000,
+                "estado": "negociacion",
+                "giro": "belleza",
+                "imagen": "https://placehold.co/600x400/ec4899/ffffff?text=ESTETICA"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.0213486001978,
+                            19.573128897711157
+                        ],
+                        [
+                            -99.02130776990505,
+                            19.573036024474604
+                        ],
+                        [
+                            -99.02125508127119,
+                            19.57304978545133
+                        ],
+                        [
+                            -99.0213189213819,
+                            19.57313739032294
+                        ],
+                        [
+                            -99.0213486001978,
+                            19.573128897711157
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L08",
+                "floorId": 1,
+                "nombre": "Local 8 - Helados",
+                "area": 20,
+                "precio": 5000,
+                "estado": "disponible",
+                "giro": "snacks",
+                "imagen": "https://placehold.co/600x400/fcd34d/000000?text=HELADOS"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.0213178084396,
+                            19.573137983157906
+                        ],
+                        [
+                            -99.02125310308877,
+                            19.57305054001141
+                        ],
+                        [
+                            -99.02122463273929,
+                            19.57307231370686
+                        ],
+                        [
+                            -99.02130172452945,
+                            19.573146692626665
+                        ],
+                        [
+                            -99.0213178084396,
+                            19.573137983157906
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L09",
+                "floorId": 1,
+                "nombre": "Local 9 - Farmacia",
+                "area": 55,
+                "precio": 13000,
+                "estado": "disponible",
+                "giro": "salud",
+                "imagen": "https://placehold.co/600x400/059669/ffffff?text=FARMACIA"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02130004588709,
+                            19.57314775157306
+                        ],
+                        [
+                            -99.02122377056818,
+                            19.573073198672247
+                        ],
+                        [
+                            -99.02120499510504,
+                            19.573088204025865
+                        ],
+                        [
+                            -99.02128177333842,
+                            19.573161335359814
+                        ],
+                        [
+                            -99.02130004588709,
+                            19.57314775157306
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P1_L10",
+                "floorId": 1,
+                "nombre": "Local 10 - Salida",
+                "area": 30,
+                "precio": 8000,
+                "estado": "disponible",
+                "giro": "varios",
+                "imagen": "https://placehold.co/600x400/64748b/ffffff?text=LOCAL+DISPONIBLE"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02120432453258,
+                            19.57308962552399
+                        ],
+                        [
+                            -99.02118269922236,
+                            19.573109527358753
+                        ],
+                        [
+                            -99.02126148911242,
+                            19.573179815567144
+                        ],
+                        [
+                            -99.02127992929903,
+                            19.573162598907004
+                        ],
+                        [
+                            -99.02120432453258,
+                            19.57308962552399
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L01",
+                "floorId": 2,
+                "nombre": "Oficina 201 - Dental",
+                "area": 35,
+                "precio": 9500,
+                "estado": "disponible",
+                "giro": "consultorio",
+                "imagen": "https://placehold.co/600x400/0ea5e9/ffffff?text=CONSULTORIO+DENTAL"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02145056052245,
+                            19.57334682961711
+                        ],
+                        [
+                            -99.02146866543316,
+                            19.573327875516085
+                        ],
+                        [
+                            -99.02141200376781,
+                            19.57327812099068
+                        ],
+                        [
+                            -99.0213947370475,
+                            19.573296601244635
+                        ],
+                        [
+                            -99.02145056052245,
+                            19.57334682961711
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L02",
+                "floorId": 2,
+                "nombre": "Oficina 202 - Despacho",
+                "area": 50,
+                "precio": 14000,
+                "estado": "disponible",
+                "giro": "legal",
+                "imagen": "https://placehold.co/600x400/475569/ffffff?text=DESPACHO+LEGAL"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02146983890009,
+                            19.573326611908897
+                        ],
+                        [
+                            -99.02148827908668,
+                            19.573307026002468
+                        ],
+                        [
+                            -99.02143128214544,
+                            19.573256323765804
+                        ],
+                        [
+                            -99.02141334487268,
+                            19.573277015334554
+                        ],
+                        [
+                            -99.02146983890009,
+                            19.573326611908897
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L03",
+                "floorId": 2,
+                "nombre": "Local 203 - Terapia",
+                "area": 45,
+                "precio": 12000,
+                "estado": "disponible",
+                "giro": "salud",
+                "imagen": "https://placehold.co/600x400/14b8a6/ffffff?text=TERAPIA+FISICA"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02148911600936,
+                            19.573306024779356
+                        ],
+                        [
+                            -99.02151141187201,
+                            19.57328327985232
+                        ],
+                        [
+                            -99.02145173272099,
+                            19.573232577608167
+                        ],
+                        [
+                            -99.021432454344,
+                            19.573255638443968
+                        ],
+                        [
+                            -99.02148911600936,
+                            19.573306024779356
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L04",
+                "floorId": 2,
+                "nombre": "Local 204 - Seguros",
+                "area": 28,
+                "precio": 8500,
+                "estado": "negociacion",
+                "giro": "oficina",
+                "imagen": "https://placehold.co/600x400/3b82f6/ffffff?text=SEGUROS"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02150987804264,
+                            19.573279391100442
+                        ],
+                        [
+                            -99.02153414512608,
+                            19.573254832630383
+                        ],
+                        [
+                            -99.02147662315117,
+                            19.573208256211956
+                        ],
+                        [
+                            -99.02145505241064,
+                            19.573204868836243
+                        ],
+                        [
+                            -99.02145213137268,
+                            19.573230909289904
+                        ],
+                        [
+                            -99.02150987804264,
+                            19.573279391100442
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L05",
+                "floorId": 2,
+                "nombre": "Gym 205 - Crossfit",
+                "area": 120,
+                "precio": 30000,
+                "estado": "disponible",
+                "giro": "fitness",
+                "imagen": "https://placehold.co/600x400/dc2626/ffffff?text=GYM+CROSSFIT"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02147594335368,
+                            19.573205057943483
+                        ],
+                        [
+                            -99.02153565138272,
+                            19.573252079342566
+                        ],
+                        [
+                            -99.02159387413782,
+                            19.573191063476415
+                        ],
+                        [
+                            -99.02154723652282,
+                            19.57311437377564
+                        ],
+                        [
+                            -99.02143346450688,
+                            19.57315103929359
+                        ],
+                        [
+                            -99.02145663478706,
+                            19.57320253893907
+                        ],
+                        [
+                            -99.02147594335368,
+                            19.573205057943483
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L06",
+                "floorId": 2,
+                "nombre": "Local 206 - Contadores",
+                "area": 40,
+                "precio": 10000,
+                "estado": "disponible",
+                "giro": "oficina",
+                "imagen": "https://placehold.co/600x400/64748b/ffffff?text=CONTADORES"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02139190725323,
+                            19.573122381405085
+                        ],
+                        [
+                            -99.02149450691057,
+                            19.573087762766207
+                        ],
+                        [
+                            -99.0214621556672,
+                            19.573037467749018
+                        ],
+                        [
+                            -99.02130987374356,
+                            19.57303376638349
+                        ],
+                        [
+                            -99.02135054387816,
+                            19.573128260041358
+                        ],
+                        [
+                            -99.02139190725323,
+                            19.573122381405085
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L07",
+                "floorId": 2,
+                "nombre": "Local 207 - Bodega",
+                "area": 25,
+                "precio": 7500,
+                "estado": "ocupado",
+                "giro": "almacen",
+                "imagen": "https://placehold.co/600x400/fbbf24/000000?text=BODEGA"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.0213486001978,
+                            19.573128897711157
+                        ],
+                        [
+                            -99.02130776990505,
+                            19.573036024474604
+                        ],
+                        [
+                            -99.02125508127119,
+                            19.57304978545133
+                        ],
+                        [
+                            -99.0213189213819,
+                            19.57313739032294
+                        ],
+                        [
+                            -99.0213486001978,
+                            19.573128897711157
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L08",
+                "floorId": 2,
+                "nombre": "Local 208 - Reparación",
+                "area": 20,
+                "precio": 5500,
+                "estado": "disponible",
+                "giro": "tecnologia",
+                "imagen": "https://placehold.co/600x400/2563eb/ffffff?text=REPARACION+PC"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.0213178084396,
+                            19.573137983157906
+                        ],
+                        [
+                            -99.02125310308877,
+                            19.57305054001141
+                        ],
+                        [
+                            -99.02122463273929,
+                            19.57307231370686
+                        ],
+                        [
+                            -99.02130172452945,
+                            19.573146692626665
+                        ],
+                        [
+                            -99.0213178084396,
+                            19.573137983157906
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L09",
+                "floorId": 2,
+                "nombre": "Local 209 - Coworking",
+                "area": 55,
+                "precio": 14000,
+                "estado": "disponible",
+                "giro": "oficina",
+                "imagen": "https://placehold.co/600x400/8b5cf6/ffffff?text=COWORKING+SPACE"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02130004588709,
+                            19.57314775157306
+                        ],
+                        [
+                            -99.02122377056818,
+                            19.573073198672247
+                        ],
+                        [
+                            -99.02120499510504,
+                            19.573088204025865
+                        ],
+                        [
+                            -99.02128177333842,
+                            19.573161335359814
+                        ],
+                        [
+                            -99.02130004588709,
+                            19.57314775157306
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "P2_L10",
+                "floorId": 2,
+                "nombre": "Local 210 - Administración",
+                "area": 30,
+                "precio": 8500,
+                "estado": "disponible",
+                "giro": "oficina",
+                "imagen": "https://placehold.co/600x400/0f172a/ffffff?text=ADMINISTRACION"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -99.02120432453258,
+                            19.57308962552399
+                        ],
+                        [
+                            -99.02118269922236,
+                            19.573109527358753
+                        ],
+                        [
+                            -99.02126148911242,
+                            19.573179815567144
+                        ],
+                        [
+                            -99.02127992929903,
+                            19.573162598907004
+                        ],
+                        [
+                            -99.02120432453258,
+                            19.57308962552399
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
