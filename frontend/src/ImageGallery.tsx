@@ -11,10 +11,11 @@ export default function ImageGallery({ localCode, isOpen, onClose }: GalleryProp
 
     // Asumimos que cada local tiene 3 fotos. 
     // En un sistema real, esto vendría de la Base de Datos, pero por convención funciona perfecto.
+    const BASE_IMAGE_URL = "https://storageplazablob.blob.core.windows.net/locales";
     const images = [
-        `/locales/${localCode}/1.jpg`,
-        `/locales/${localCode}/2.jpg`,
-        `/locales/${localCode}/3.jpg`
+        `${BASE_IMAGE_URL}/${localCode}/1.jpg`,
+        `${BASE_IMAGE_URL}/${localCode}/2.jpg`,
+        `${BASE_IMAGE_URL}/${localCode}/3.jpg`
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);

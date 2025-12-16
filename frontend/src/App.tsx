@@ -7,6 +7,7 @@ import ImageGallery from './ImageGallery';
 
 // Coordenadas de Ecatepec
 const CENTER_COORDS: [number, number] = [19.5732, -99.0214];
+const BASE_IMAGE_URL = "https://storageplazablob.blob.core.windows.net/locales";
 
 interface Floor {
   FloorId: number;
@@ -31,6 +32,7 @@ function App() {
   // Leemos si el usuario quiere entrar al admin
   const isAdminMode = window.location.search === '?admin';
   const [user, setUser] = useState<any>(null); // Guardará los datos del usuario logueado
+  
 
   // 2. LÓGICA DE RUTEO SIMPLE
   if (isAdminMode) {
@@ -212,6 +214,8 @@ function App() {
         {/* PANEL LATERAL */}
         <aside className="w-1/3 min-w-[350px] bg-white p-6 shadow-xl z-20 overflow-y-auto border-r border-gray-200">
 
+          
+
           {localSeleccionado ? (
             <div className="animate-fade-in space-y-4"> {/* Agregamos un contenedor con espaciado */}
 
@@ -243,13 +247,11 @@ function App() {
                   >
                     {/* Imagen de Portada (Buscamos la 1.jpg) */}
                     <img
-                      src={`/locales/${localSeleccionado.code}/1.jpg`}
+                      src={`${BASE_IMAGE_URL}/${localSeleccionado.code}/1.jpg`}
                       alt={localSeleccionado.nombre}
-                      className="w-full h-full object-cover group-hover:opacity-75 transition-opacity"
-                      onError={(e) => {
-                        // Fallback por si no has subido la foto aún
-                        e.currentTarget.src = 'https://placehold.co/600x400?text=Sin+Imagen';
-                      }}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      // Esto es opcional, porsi la imagen falla cargar una por defecto
+                      onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400?text=Sin+Imagen'; }}
                     />
 
                     {/* Icono de "Ver Más" al pasar el mouse */}
